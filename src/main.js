@@ -6,6 +6,7 @@ import store from './store'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 
+//automatic registration of global components
 const requireComponent = require.context(
   './components',
   false,
@@ -21,6 +22,7 @@ requireComponent.keys().forEach(fileName => {
 
   Vue.component(componentName, componentConfig.default || componentConfig)
 })
+//automatic registration of global components
 
 Vue.config.productionTip = false
 
